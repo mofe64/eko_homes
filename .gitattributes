@@ -1,2 +1,2 @@
-static*.css linguist-vendored
-ekohomes/static/*.css linguist-vendored
+static/* linguist-vendored
+ekohomes/static/* linguist-vendored
