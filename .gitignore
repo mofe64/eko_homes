@@ -1,5 +1,13 @@
-/static
-/media
-db.sqlite3
+
 env
 .vscode/
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+/media
+
+/static
+.vscode

@@ -2,9 +2,13 @@
 <!---->
 {% load humanize %}
 <!---->
+{%block title %} Welcome {% endblock %}
+<!---->
 {%block content%}
 <!-- Showcase -->
+
 <section id="showcase">
+  {% include 'partials/_alerts.html'%}
   <div class="container text-center">
     <div class="home-search p-5">
       <div class="overlay p-5">
