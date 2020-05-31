@@ -30,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f-oupr!_h_wv$n4xttg+x*dm-#he=ts(j@sq^j$j9jn6z^x#yw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost',
                  '127.0.0.1', 'https://ekohomes.herokuapp.com/']
