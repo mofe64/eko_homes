@@ -1,5 +1,9 @@
+from django.contrib.messages import constants as messages
+import os
 import dj_database_url
-from .base_settings import SECRET_KEY_STRING, EMAIL_HOST_USER_STRING, EMAIL_HOST_PASSWORD_STRING
+import environ
+env = environ.Env()
+environ.Env.read_env()
 
 """
 Django settings for ekohomes project.
@@ -13,8 +17,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
-from django.contrib.messages import constants as messages
 # Messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
@@ -29,12 +31,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SECRET_KEY_STRING
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = {'*'}
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -153,6 +155,6 @@ MEDIA_URL = '/media/'
 # email config
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = EMAIL_HOST_USER_STRING
-EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD_STRING
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True

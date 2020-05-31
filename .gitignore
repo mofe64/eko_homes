@@ -9,3 +9,4 @@ db.sqlite3
 static
 .vscode
 ekohomes/base_settings.py
+ekohomes/.env
