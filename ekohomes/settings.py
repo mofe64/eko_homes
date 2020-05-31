@@ -36,8 +36,6 @@ ALLOWED_HOSTS = ['0.0.0.0', 'localhost',
                  '127.0.0.1', 'https://ekohomes.herokuapp.com/']
 
 
-SECRET_KEY = os.environ.get(
-    'f-oupr!_h_wv$n4xttg+x*dm-#he=ts(j@sq^j$j9jn6z^x#yw')
 EMAIL_HOST_USER = os.environ.get('ogunbiyioladapo33@gmail.com')
 EMAIL_HOST_PASSWORD = os.environ.get('eyimofe64')
 
