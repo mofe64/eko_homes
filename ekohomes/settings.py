@@ -1,5 +1,3 @@
-import django_heroku
-import dj_database_url
 """
 Django settings for ekohomes project.
 
@@ -31,14 +29,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'f-oupr!_h_wv$n4xttg+x*dm-#he=ts(j@sq^j$j9jn6z^x#yw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1',
-                 'https://ekohomes.herokuapp.com/']
+ALLOWED_HOSTS = []
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -54,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
@@ -65,7 +59,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'ekohomes.urls'
@@ -101,9 +94,6 @@ DATABASES = {
         'HOST': 'localhost'
     }
 }
-
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -158,7 +148,3 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'ogunbiyioladapo33@gmail.com'
 EMAIL_HOST_PASSWORD = 'eyimofe64'
 EMAIL_USE_TLS = True
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-django_heroku.settings(locals())
