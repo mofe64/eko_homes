@@ -32,7 +32,7 @@ SECRET_KEY = 'f-oupr!_h_wv$n4xttg+x*dm-#he=ts(j@sq^j$j9jn6z^x#yw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://ekohomes.herokuapp.com/']
+ALLOWED_HOSTS = {'*'}
 
 
 EMAIL_HOST_USER = os.environ.get('ogunbiyioladapo33@gmail.com')
