@@ -1,1 +1,1 @@
-web: gunicorn ekohomes.wsgi --log-file-
+web: gunicorn ekohomes.wsgi --log-file -
