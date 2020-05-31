@@ -1,4 +1,6 @@
 import dj_database_url
+from .base_settings import SECRET_KEY_STRING, EMAIL_HOST_USER_STRING, EMAIL_HOST_PASSWORD_STRING
+
 """
 Django settings for ekohomes project.
 
@@ -27,16 +29,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'f-oupr!_h_wv$n4xttg+x*dm-#he=ts(j@sq^j$j9jn6z^x#yw'
+SECRET_KEY = SECRET_KEY_STRING
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = {'*'}
 
-
-EMAIL_HOST_USER = os.environ.get('ogunbiyioladapo33@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('eyimofe64')
 
 # Application definition
 
@@ -154,6 +153,6 @@ MEDIA_URL = '/media/'
 # email config
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'ogunbiyioladapo33@gmail.com'
-EMAIL_HOST_PASSWORD = 'eyimofe64'
+EMAIL_HOST_USER = EMAIL_HOST_USER_STRING
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD_STRING
 EMAIL_USE_TLS = True
